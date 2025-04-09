@@ -1,4 +1,3 @@
-require 'rspec'
 require "string_calculator"
 
 describe StringCalculator do
@@ -47,12 +46,11 @@ describe StringCalculator do
 
     context "handle negetive numbers" do
       it "raise an exception" do
-        expect { StringCalculator.add("-1,-2,3")}.to raise_exception {|exp| 
-          exp.message.should eql "negative numbers not allowed -1, -2" 
-        }
+        expect { StringCalculator.add("-1,-2,3")}.to raise_exception(
+          "negative numbers not allowed -1, -2"
+          )
       end
     end
 
   end
 end
-
