@@ -22,12 +22,19 @@ describe StringCalculator do
         end
       end
 
-      context "given '17,100'" do
-        it "returns 117" do
+      context "given '17,10'" do
+        it "returns 27" do
           expect(StringCalculator.add("17,10")).to eql(27)
         end
       end
     end
+
+    context "handle new line between numbers" do
+      it "1\n2,3" do
+        expect(StringCalculator.add("1\n2,3")).to eql(6)
+      end
+    end
+
   end
 end
 
