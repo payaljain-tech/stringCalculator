@@ -35,6 +35,16 @@ describe StringCalculator do
       end
     end
 
+    context "support different delimeters" do
+      it "1;2;3" do
+        expect(StringCalculator.add("1;2;3")).to eql(6)
+      end
+
+      it "//;\n1;2" do
+        expect(StringCalculator.add("//;\n1;2")).to eql(3)
+      end
+    end
+
   end
 end
 
